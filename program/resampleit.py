@@ -44,7 +44,7 @@ def resampleit(path, target_frequency):
 if __name__ == '__main__':
     arguments = docopt(__doc__, version=' 1.0')
     if arguments['<path>'] and arguments['<target_frequency>']:
-        resampleit(arguments['<path>'], arguments['<target_frequency>'])
+        resampleit(arguments['<path>'], int(arguments['<target_frequency>']))
     else:
         path = file_selection(multiple=False, directory=False, save=False, confirm_overwrite=False, filename=None, title='', width=330, height=120, timeout=None)
         target_frequency = int(input("Enter target frequency: "))
